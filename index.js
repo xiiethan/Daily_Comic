@@ -2,8 +2,6 @@
 var express = require('express');
 //reqiure body parser
 var bodyParser = require('body-parser');
-//Require mongoose
-var mongoose = require('mongoose');
 //Require node fetch
 var fetch = require('node-fetch');
 //create express object, call express
