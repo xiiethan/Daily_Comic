@@ -1,0 +1,28 @@
+{
+  "name": "dillinger_midterm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xiiethan/Dillinger_Midterm.git"
+  },
+  "author": "Ethan Dillinger",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xiiethan/Dillinger_Midterm/issues"
+  },
+  "homepage": "https://github.com/xiiethan/Dillinger_Midterm#readme",
+  "engines": {
+    "node": "12.x"
+  },
+  "dependencies": {
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.1"
+  }
+}
