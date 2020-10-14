@@ -17,6 +17,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 // BODY
+app.get('/', function (req, res) {
+  res.render('Home', {});
+});
+app.get('/random', function (req, res) {
+  res.render('Random', {});
+});
 
 //server setup
 app.listen(port, function () {
