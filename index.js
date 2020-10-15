@@ -24,6 +24,28 @@ app.get('/random', function (req, res) {
   res.render('Random', {});
 });
 
+app.get('/', function(req, res){
+    fetch('http://xkcd.com/info.0.json')
+    .then(res => res.json())
+    .then(data => {
+        res.render('/', {data:data})
+    });
+});
+
+app.get('/random', function(req, res){
+    let randomNumber = rand(1, 600);
+    fetch('http://xkcd.com/'+randomNumber+'/info.0.json')
+    .then(res => res.json())
+    .then(data => {
+        res.render('/random', {data:data})
+    });
+});
+
+function rand(min, max) {
+    let randomNum = Math.random() * (max - min) + min;
+    return Math.round(randomNum);
+}
+
 //server setup
 app.listen(port, function () {
     console.log('Listening on port ' + port)

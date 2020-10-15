@@ -7,51 +7,40 @@
     
         <title> Ethan's Comic of the Day </title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link href="/public/styles.css" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
     </head>
     <body>
-        <div th:replace="fragments/header :: header(content='home')"></div>
-        <div class="jumbotron">
-            <h1 class="display-4">Comic of the Day</h1>
-            <p class="lead">Here you can find the Comic of the Day, or if you'd like another one, you can shuffle for a random comic.</p>
-            <hr class="my-4">
-            <p>Click here for a new comic</p>
-            <a class="btn btn-primary btn-lg" href="/random" role="button">Random Comic</a>
-        </div>
+    <div class="jumbotron">
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link active" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/random">Random Comic</a>
+            </li>
+        </ul>
+        
+        <h1 class="display-4">Comic of the Day</h1>
+        <p class="lead">Here you can find the Comic of the Day, or if you'd like another one, you can shuffle for a random comic.</p>
+        <hr class="my-4">
+        <p>Click here for a new comic</p>
+        <a class="btn btn-primary btn-lg" href="/random" role="button">Random Comic</a>
+    </div>
 
-        <div class='ComicSpace'></div>
+    <div class='ComicSpace'>
+        <h3><%= data.title %></h3>
+        <p><%= data.day %></p>
+        <p><%= data.month %></p>
+        <p><%= data.year %></p>
+        <img src= <%= data.img alt = "Comic of the Day"%> </img>
+        <%= data.alt %>
+    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-
-    <script>
-        $( document ).ready(function() {
-            console.log( "ready!" );
-            $.ajax({
-                    type: 'POST',
-                    url: 'https://xkcd.com/info.0.json',
-                    dataType: 'json',
-                    success: function(data){
-                        console.log(data);
-                        var img = '<img src="' + data.url + '" alt="Comic of the day">';
-                        var title = '<h3>' + data.title + '</h3>';
-                        var day = '<span>' + data.day + '</span>';
-                        var month = '<span>' + data.month + '</span>';
-                        var year = '<span>' + data.year + '</span>';
-                        var description = '<span>' + data.alt + '</span>';
-                        $('#ComicSpace').html(title + day + month + year + img + description);
-                    },
-                    error: function(e){
-                        console.log(e);
-                    }
-                });
-        });
-    </script>
   </body>
 </html>
 </html>
