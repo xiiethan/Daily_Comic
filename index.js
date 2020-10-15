@@ -16,14 +16,15 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 
-// BODY
+// BODY 
+/*
 app.get('/', function (req, res) {
   res.render('Home', {});
 });
 app.get('/random', function (req, res) {
   res.render('Random', {});
 });
-
+*/
 app.get('/', function(req, res){
     fetch('http://xkcd.com/info.0.json')
     .then(res => res.json())
