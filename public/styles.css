@@ -1,3 +1,42 @@
+*{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: normal;
+}
+
+/* To Do
+ * Style the nav links
+*/
+.jumbotron{
+    background-image:url('paper.jpg');
+    padding-bottom: 0px;
+}
 body{
-    color: grey;
+    background-image:url('paper.jpg');
+}
+button{
+    background: transparent;
+    border: #45A29E;
+    color: white;
+}
+.nav-link{
+    color: black;
+    text-decoration: none;
+}
+.nav-link:hover{
+    color: rgb(105, 100, 100);
+}
+p{
+    margin-top: 10px;
+}
+.ComicSpace{
+    margin: 30px;
+}
+#Comic{
+    display: static;
+    text-align: center;
+    margin: 50px;
+}
+#date{
+    float: right;
+    padding-left: 10px;
 }
