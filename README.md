@@ -4,7 +4,7 @@ Website that fetches the Comic of the Day and a given comic using XKCD api
 
 **node index.js** will launch site from the terminal
 
-Heroku Link - [Heroku](http://heroku.com)
+Heroku Link - [Heroku](https://dailycomic.herokuapp.com/random)
 
 
 
