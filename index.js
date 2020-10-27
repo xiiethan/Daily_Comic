@@ -25,7 +25,7 @@ app.get('/', function(req, res){
 });
 //This function uses the XKCD specific comic and uses a random number generator to give us a random comic
 app.get('/random', function(req, res){
-    let randomNumber = rand(1, 600);
+    let randomNumber = rand(1, 2000);
     fetch('http://xkcd.com/'+randomNumber+'/info.0.json')
     .then(res => res.json())
     .then(data => {
