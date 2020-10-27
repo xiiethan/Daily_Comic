@@ -1,4 +1,4 @@
-# Dillinger_Midterm
+# Daily Comic
 
 Website that fetches the Comic of the Day and a given comic using XKCD api
 
